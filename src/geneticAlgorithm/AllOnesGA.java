@@ -20,14 +20,14 @@ public class AllOnesGA {
 		//System.out.println(testDataset);
 
 		GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.95,
-				10, trainDataset, null, MachineLearingType.JRIP);
+				10, trainDataset, null, MachineLearingType.SMO);
 
 		int chromosomeLength=trainDataset.numAttributes()-1;
 
 		Population population = ga.initPopulation(chromosomeLength);
 		
 		ga.evalPopulation(population);
-		int generation = 1;
+		int generation = 0;
 		
 		while(ga.isTerminationConditionMet(population)==false){
 			System.out.println("Best solution:"+ population.getFittest(0).toString());

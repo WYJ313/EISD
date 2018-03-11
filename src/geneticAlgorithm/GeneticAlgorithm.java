@@ -41,16 +41,7 @@ public class GeneticAlgorithm {
 		if(MLT==MachineLearingType.J48)
 			this.classifier= new J48();
 		else if(MLT==MachineLearingType.SMO) {
-			String[] options =
-					{"-C", "2", "-K",
-							"weka.classifiers.functions.supportVector.RBFKernel",
-							"-C", "8000", "-G", "1"};
 			this.classifier = new SMO();
-			try {
-				this.classifier.setOptions(options);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}else if(MLT==MachineLearingType.JRIP)
 			this.classifier=new JRip();
 		else if(MLT==MachineLearingType.RF)
